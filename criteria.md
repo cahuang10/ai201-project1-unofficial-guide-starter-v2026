@@ -57,6 +57,8 @@ in at least 4 of 5 tries.
 
 ## 4. Something about your chunks
 
+For at least 4 of 5 sampled chunks, the chunk covers one topic
+
 <!-- YOU WRITE THIS ONE.
 
      How would you know if your chunks were the right size? Name something
@@ -72,12 +74,12 @@ in at least 4 of 5 tries.
 
 
 **Why this target:**
-
-
+# I picked this target because, chunching 88 documents could lead to extra information about the topic i am resquesting.
 
 ---
 
 ## 5. Your choice
+For at least 4 of my 5 in-corpus test questions, the gate lets the question through (doesn't refuse) so an answer is attempted.
 
 <!-- YOU WRITE THIS ONE TOO.
 
@@ -90,7 +92,7 @@ in at least 4 of 5 tries.
 
 
 **Why this target:**
-
+# I want to know if the answer can be retrive based on what campus_life contains in itself.
 
 
 ---
