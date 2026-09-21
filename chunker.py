@@ -80,24 +80,56 @@ def fallback_split(
     return chunks
 
 
+def is_heading_like(paragraph: str) -> bool:
+    """No sentence-ending punctuation means it's a title/fragment, not
+    standalone content — merge it forward instead of chunking it alone."""
+    sentence_enders = (".", "?", "!")
+
+    for mark in sentence_enders:
+        if mark in paragraph:
+            return False   # found punctuation, so this is real content
+
+    return True 
+
+"""
+Splits docs on blank lines into paragraphs; any paragraph with no
+sentence-ending punctuation (a bare heading) is held and merged into
+the next real paragraph, so no chunk is just a title with no content.
+"""
 def split_documents(documents: list[Document]) -> list[Chunk]:
-    """
-    Split documents into chunks. ⚠️ REPLACE THE BODY OF THIS IN MILESTONE 3.
+    chunks: list[Chunk] = []
 
-    Right now it just calls the fallback. That is the plain, generic behaviour
-    the brief is talking about.
+    for doc in documents:
+        paragraphs = [p.strip() for p in doc.text.split("\n\n") if p.strip()]
 
-    When you write your own strategy, set `produced_by` to
-    "chunker.py::split_documents" so your README's Sample Chunks section names
-    the right function. `app.py chunks` prints that string for you.
+        pending = ""   # holds heading-like text until real content shows up
+        index = 0
 
-    Things worth thinking about before you write any code:
-      - Are your documents short posts or long guides?
-      - Is the useful information in one sentence, or spread over a paragraph?
-      - Would splitting on paragraph breaks keep more thoughts intact than
-        splitting on a character count?
-    """
-    return fallback_split(documents)
+        for p in paragraphs:
+            combined = f"{pending}\n\n{p}" if pending else p
+
+            if is_heading_like(p):
+                pending = combined          # still waiting on content
+            else:
+                chunks.append(Chunk(
+                    text=combined,
+                    source=doc.source,
+                    index=index,
+                    produced_by="chunker.py::split_documents",
+                ))
+                index += 1
+                pending = ""
+
+        if pending:   # a heading was left dangling at the end of the doc
+            chunks.append(Chunk(
+                text=pending,
+                source=doc.source,
+                index=index,
+                produced_by="chunker.py::split_documents",
+            ))
+
+    return chunks
+    #return fallback_split(documents)
 
 
 def describe(chunks: list[Chunk]) -> str:
