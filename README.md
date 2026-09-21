@@ -56,26 +56,48 @@
 **Chunk 1** — source: `` — produced by: ``
 
 ```
+======================================================================
+Chunk 1  |  source: admin_add_drop_deadline.txt#0  |  produced by: chunker.py::split_documents
+======================================================================
+On the add/drop deadline
+
+You can add a course through the end of the second week. Dropping is a longer window — through the end of week six — but a drop after week two shows as a W on your transcript. Nothing anywhere on the registrar's site says this plainly, and students find out from each other.
 ```
 
 **Chunk 2** — source: `` — produced by: ``
 
 ```
+======================================================================
+Chunk 2  |  source: course_cs_340_exams.txt#1  |  produced by: chunker.py::split_documents
+======================================================================
+Start the term project in week three, not week eight; everyone learns this the hard way.
 ```
 
 **Chunk 3** — source: `` — produced by: ``
 
 ```
+Chunk 3  |  source: course_phys_130_workload.txt#0  |  produced by: chunker.py::split_documents
+======================================================================
+Workload for PHYS 130 Mechanics
+
+People keep asking so: 7 hours a week, plus 3 on lab weeks. That's real time, not optimistic time.
 ```
 
 **Chunk 4** — source: `` — produced by: ``
 
 ```
+Chunk 4  |  source: dining_verrill_street_grill_followup.txt#1  |  produced by: chunker.py::split_documents
+======================================================================
+Also worth saying: one register, so the queue is a single line no matter how busy. Nobody tells you this at orientation.
 ```
 
 **Chunk 5** — source: `` — produced by: ``
 
 ```
+======================================================================
+Chunk 5  |  source: housing_morrow_house.txt#1  |  produced by: chunker.py::split_documents
+======================================================================
+The good: cheapest housing tier by about $900 a year, and the singles are real singles.
 ```
 
 ## Sample Answer
@@ -88,6 +110,11 @@
 **Answer:**
 
 ```
+   {"question": "is the housing lottery actually random?", "expects": "credit hours"},
+    {"question": "how long is the wait at Pellew Dining Hall during peak lunch time?", "expects": "12 to 18 minutes"},
+    {"question": "how many hours a week does a campus job allow during term?", "expects": "20 hours"},
+    {"question": "how many hours a week should I expect for CS 210?", "expects": "8 to 10 hours"},
+    {"question": "when is the best time to do laundry in Tamsin Court?", "expects": "Tuesday"},
 ```
 
 **My relevance cutoff:**
@@ -101,7 +128,7 @@
 
      Milestone 4. -->
 
-| Question | In corpus? | Best distance |
+| Question | In corpus: campus_life | Best distance is 0.6|
 |---|---|---|
 |  |  |  |
 
@@ -110,11 +137,17 @@
 <!-- Two specific moments. For each: what you asked for, what came back, and
      what you changed about it.
 
-     "I asked Claude to write the chunking function from my notes. It ignored
-     the overlap, so I added that myself" is the level of detail we're after.
-     "I used AI to help me code" is not.
+     "I asked claude to help me write the chucker funtions because I had a pretty good idea of how I wanted it, but i was not sure how to code it, so I directed it to the answer"
 
-     Milestone 5. -->
+     "I used claude to learn and disgest the material because some of the concepts were not fresh in my brian like chunking"
+
+
+     Milestone 5. 
+           "I asked claude to help me write the chucker funtions because I had a pretty good idea of how I wanted it, but i was not sure how to code it, so I directed it to the answer"
+
+          "I used claude to learn and disgest the material because some of the concepts were not fresh in my brian like chunking"
+
+     -->
 
 **1.**
 
