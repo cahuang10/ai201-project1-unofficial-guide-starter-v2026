@@ -180,15 +180,170 @@ The good: cheapest housing tier by about $900 a year, and the singles are real s
 
 | Criterion | Target | Run 1 | Run 2 | Run 3 | Verdict |
 |---|---|---|---|---|---|
-| 1. Retrieved chunk contains the answer | 4 of 5 |  |  |  |  |
-| 2. Every answer names a source | 5 of 5 |  |  |  |  |
-| 3. Gate stops out-of-corpus questions | 4 of 5 |  |  |  |  |
+| 1. Retrieved chunk contains the answer | 4 of 5 | 5/5 | 5/5 | 5/5 | |
+| 2. Every answer names a source | 5 of 5 | 5/5 | 5/5 | 5/5 ||
+| 3. Gate stops out-of-corpus questions | 4 of 5 | 5/5 | 5/5 | 5/5 ||
 | 4. | | | | | |
 | 5. | | | | | |
 
 <!-- Underneath, paste the REAL output for each criterion from one of your
      runs — the actual text your system produced, not a description of it.
      Name the file and function that produced it. -->
+### is the housing lottery actually random? — run 1
+
+- Best distance: 0.2483 (passed the gate)
+- Sources retrieved: admin_housing_lottery.txt, admin_parking_permits.txt, advising_registration.txt, housing_innisfree_hall.txt, housing_morrow_house.txt
+
+```
+The housing lottery is not entirely random; rising sophomores get a number drawn at random, but juniors and seniors are ordered first by accumulated credit hours, using random selection only as a tie-breaker (admin_housing_lottery.txt).
+```
+
+### is the housing lottery actually random? — run 2
+
+- Best distance: 0.2483 (passed the gate)
+- Sources retrieved: admin_housing_lottery.txt, admin_parking_permits.txt, advising_registration.txt, housing_innisfree_hall.txt, housing_morrow_house.txt
+
+```
+No, the housing lottery is not entirely random. Rising sophomores receive a randomly drawn number, but juniors and seniors are ordered by accumulated credit hours first, with random selection used only as a tie-breaker (admin_housing_lottery.txt).
+```
+
+### is the housing lottery actually random? — run 3
+
+- Best distance: 0.2483 (passed the gate)
+- Sources retrieved: admin_housing_lottery.txt, admin_parking_permits.txt, advising_registration.txt, housing_innisfree_hall.txt, housing_morrow_house.txt
+
+```
+The housing lottery is not entirely random; rising sophomores have a number drawn at random, but juniors and seniors are ordered first by accumulated credit hours, with random tie-breaking used only when necessary. 
+
+Source: `admin_housing_lottery.txt`
+```
+
+### how long is the wait at Pellew Dining Hall during peak lunch time? — run 1
+
+- Best distance: 0.1323 (passed the gate)
+- Sources retrieved: dining_halden_hall_followup.txt, dining_kestrel_commons_followup.txt, dining_pellew_dining_hall.txt, dining_pellew_dining_hall_followup.txt, dining_the_ridgeway_cafe_followup.txt
+
+```
+Based on the documents provided, the wait time at Pellew Dining Hall during peak times is 12 to 18 minutes (dining_pellew_dining_hall.txt and dining_pellew_dining_hall_followup.txt).
+```
+
+### how long is the wait at Pellew Dining Hall during peak lunch time? — run 2
+
+- Best distance: 0.1323 (passed the gate)
+- Sources retrieved: dining_halden_hall_followup.txt, dining_kestrel_commons_followup.txt, dining_pellew_dining_hall.txt, dining_pellew_dining_hall_followup.txt, dining_the_ridgeway_cafe_followup.txt
+
+```
+The wait time at Pellew Dining Hall is 12 to 18 minutes at peak. This information comes from the documents `dining_pellew_dining_hall.txt` and `dining_pellew_dining_hall_followup.txt`.
+```
+
+### how long is the wait at Pellew Dining Hall during peak lunch time? — run 3
+
+- Best distance: 0.1323 (passed the gate)
+- Sources retrieved: dining_halden_hall_followup.txt, dining_kestrel_commons_followup.txt, dining_pellew_dining_hall.txt, dining_pellew_dining_hall_followup.txt, dining_the_ridgeway_cafe_followup.txt
+
+```
+The wait time at Pellew Dining Hall is 12 to 18 minutes at peak lunch time (dining_pellew_dining_hall.txt and dining_pellew_dining_hall_followup.txt).
+```
+
+### how many hours a week does a campus job allow during term? — run 1
+
+- Best distance: 0.2427 (passed the gate)
+- Sources retrieved: course_cs_210.txt, course_econ_101.txt, course_stat_150.txt, housing_aldridge_hall.txt, money_jobs.txt
+
+```
+A campus job allows a maximum of 20 hours a week during term, though most people find 10 to 12 hours is the point where it stops affecting coursework. 
+
+Source: money_jobs.txt
+```
+
+### how many hours a week does a campus job allow during term? — run 2
+
+- Best distance: 0.2427 (passed the gate)
+- Sources retrieved: course_cs_210.txt, course_econ_101.txt, course_stat_150.txt, housing_aldridge_hall.txt, money_jobs.txt
+
+```
+A campus job allows a maximum of 20 hours a week during term, though most people find 10 to 12 hours is the point where it stops affecting coursework. 
+
+Source: money_jobs.txt
+```
+
+### how many hours a week does a campus job allow during term? — run 3
+
+- Best distance: 0.2427 (passed the gate)
+- Sources retrieved: course_cs_210.txt, course_econ_101.txt, course_stat_150.txt, housing_aldridge_hall.txt, money_jobs.txt
+
+```
+A campus job allows a maximum of 20 hours a week during term, though most people find 10 to 12 hours is the point where it stops affecting coursework. 
+
+Source: money_jobs.txt
+```
+
+### how many hours a week should I expect for CS 210? — run 1
+
+- Best distance: 0.3098 (passed the gate)
+- Sources retrieved: course_cs_210.txt, course_cs_210_workload.txt, course_math_220.txt, course_phys_130.txt, course_stat_150_workload.txt
+
+```
+For CS 210, you should expect 8 to 10 hours a week outside class. 
+
+This answer came from `course_cs_210_workload.txt` and `course_cs_210.txt`.
+```
+
+### how many hours a week should I expect for CS 210? — run 2
+
+- Best distance: 0.3098 (passed the gate)
+- Sources retrieved: course_cs_210.txt, course_cs_210_workload.txt, course_math_220.txt, course_phys_130.txt, course_stat_150_workload.txt
+
+```
+You should expect 8 to 10 hours a week outside of class for CS 210. 
+
+This information comes from `course_cs_210.txt` and `course_cs_210_workload.txt`.
+```
+
+### how many hours a week should I expect for CS 210? — run 3
+
+- Best distance: 0.3098 (passed the gate)
+- Sources retrieved: course_cs_210.txt, course_cs_210_workload.txt, course_math_220.txt, course_phys_130.txt, course_stat_150_workload.txt
+
+```
+You should expect 8 to 10 hours a week outside class for CS 210. 
+
+Source: `course_cs_210_workload.txt` (and also mentioned in `course_cs_210.txt`).
+```
+
+### when is the best time to do laundry in Tamsin Court? — run 1
+
+- Best distance: 0.2727 (passed the gate)
+- Sources retrieved: housing_fenwick_court_laundry.txt, housing_innisfree_hall_laundry.txt, housing_morrow_house_laundry.txt, housing_old_brewhouse_laundry.txt, housing_tamsin_court_laundry.txt
+
+```
+The best time to do laundry in Tamsin Court is Tuesday or Wednesday morning. 
+
+Source: housing_tamsin_court_laundry.txt
+```
+
+### when is the best time to do laundry in Tamsin Court? — run 2
+
+- Best distance: 0.2727 (passed the gate)
+- Sources retrieved: housing_fenwick_court_laundry.txt, housing_innisfree_hall_laundry.txt, housing_morrow_house_laundry.txt, housing_old_brewhouse_laundry.txt, housing_tamsin_court_laundry.txt
+
+```
+The best time to do laundry in Tamsin Court is Tuesday or Wednesday morning. 
+
+Source: housing_tamsin_court_laundry.txt
+```
+
+### when is the best time to do laundry in Tamsin Court? — run 3
+
+- Best distance: 0.2727 (passed the gate)
+- Sources retrieved: housing_fenwick_court_laundry.txt, housing_innisfree_hall_laundry.txt, housing_morrow_house_laundry.txt, housing_old_brewhouse_laundry.txt, housing_tamsin_court_laundry.txt
+
+```
+The best time to do laundry in Tamsin Court is Tuesday or Wednesday morning. 
+
+Source: housing_tamsin_court_laundry.txt
+```
+
 
 ## Verdicts
 
@@ -201,13 +356,13 @@ The good: cheapest housing tier by about $900 a year, and the singles are real s
 
      Milestone 2. -->
 
-| # | Criterion | Verdict | How I decided |
-|---|---|---|---|
-| 1 |  |  |  |
-| 2 |  |  |  |
-| 3 |  |  |  |
-| 4 |  |  |  |
-| 5 |  |  |  |
+| Criterion | Target | Run 1 | Run 2 | Run 3 | Verdict |
+|---|---|---|---|---|---|
+| 1. Retrieved chunk contains the answer | 4 of 5 | 5/5 | 5/5 | 5/5 | MET |
+| 2. Every answer names a source | 5 of 5 | 5/5 | 5/5 | 5/5 | MET |
+| 3. Gate stops out-of-corpus questions | 4 of 5 | 5/5 | 5/5 | 5/5 | MET |
+| 4. For at least 4 of 5 sampled chunks, the chunk covers one topic | 4 of 5 | 5/5 | "Not repeated" | "Not repeated" | MET |
+| 5. For at least 4 of my 5 in-corpus test questions, the gate lets the question through (doesn't refuse) so an answer is attempted.| 4 of 5 | 5/5 | "Not repeated" | "Not repeated" | MET |
 
 ## Diagnoses
 
@@ -226,14 +381,33 @@ The good: cheapest housing tier by about $900 a year, and the singles are real s
 
      Missed nothing? Say so, then say honestly whether your targets were set
      low, and which one you'd tighten and to what.
+     "Target was 4 of 5; all three runs came back 5 of 5, and I confirmed by hand that all five retrieved chunks actually contained the claimed fact — not just a proxy match."
+
+
+"Target was 5 of 5; I read all 15 generated answers across the three runs and every one named at least one source file."
+"Target was 4 of 5; the gate refused 5 of 5 out-of-corpus questions, a single deterministic measurement rather than three separate trials."
+"Target was 4 of 5; all five sampled chunks covered a single topic by the literal wording of this criterion, though two of them depended on context from an adjacent chunk that this criterion doesn't ask about."
+"Target was 4 of 5; all five in-corpus test questions passed the gate on every run, again a fixed check rather than a re-rolled one."
+
+
 
      Milestone 3. -->
+Criterion 3 was measured once because retrieval and the fixed relevance gate are deterministic. Criterion 4 is based on manual inspection of the five sampled chunks, rather than the generated-answer runs. No original criterion was missed. But passing the test does not tell us much beyoung these small tests. The split separated those passages from the context needed to interpret them. If retrieved alone, they could give the model incomplete context. The current runs do not demonstrate that this caused an incorrect answer.
+
+Original criterion 4 — retained: For at least 4 of 5 sampled chunks, the chunk covers one topic.
+
+Revised criterion 4: At least 4 of 5 sampled chunks must explicitly name the specific entity their content describes—for example, “Tamsin Court” rather than just “the hall.” The name must appear in the chunk’s text or an included heading; a filename or adjacent chunk does not count.
+
+
+
+
 
 ## The Improvement
-
+" There is a need to change how my critirion are changed"
 **What I changed:**
-
+" I will revise criterion 4 as shown above and adjust the chunking logic to preserve the context needed to understand a passage, such as keeping an introductory statement or section heading with the text it introduces. "
 **Why I picked it:**
+"Maybe change criterion 4 becasue I have direct evidence it's broken as written. Chunks 4 and 5 in your sample opened with "Also worth saying:" and "The good:" — both referring to content that landed in a different chunk. Your criterion said "covers one topic," so both passed. But a chunk that starts mid-thought is a real retrieval liability: if that chunk gets retrieved alone, the model sees half a comparison with no idea what the other half was. You found a genuine defect and your criterion was blind to it. That's the strongest possible case for tightening — it's not speculation, it's a measured gap."
 
 <!-- Connect it to a specific diagnosis above in one sentence. If you can't,
      you picked a fix because it sounded impressive. -->
@@ -265,8 +439,8 @@ The good: cheapest housing tier by about $900 a year, and the singles are real s
 <!-- For each criterion still missed after your fix: what you'd do about it,
      and why you stopped where you did.
 
-     "I ran out of time" is fine if it's true. Pretending nothing is left is
-     not.
+     " I am not sure what to do for milestone 3 and 4 becasue based on my test, nothing is broken. all my quesitons passes. Maybe I can desgin a questions that can fail. I am not sure."
+
 
      Milestone 5. -->
 
@@ -274,5 +448,8 @@ The good: cheapest housing tier by about $900 a year, and the singles are real s
 
 <!-- Knowing what you know now — which of your five criteria would you write
      differently, and why?
+
+     " I would probrably rewrite critia number one "For at least 4 of my 5 test questions, the retrieved chunks include one that
+contains the answer." because just one of the chunks taht contains the answer seems to lenient to be a real critia. "
 
      Milestone 5. -->

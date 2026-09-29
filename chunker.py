@@ -100,37 +100,64 @@ def split_documents(documents: list[Document]) -> list[Chunk]:
     chunks: list[Chunk] = []
 
     for doc in documents:
-        paragraphs = [p.strip() for p in doc.text.split("\n\n") if p.strip()]
+        paragraphs = [
+            p.strip()
+            for p in doc.text.split("\n\n")
+            if p.strip()
+        ]
 
-        pending = ""   # holds heading-like text until real content shows up
+        # Preserve opening headings as context for every chunk.
+        headings = []
+        while paragraphs and is_heading_like(paragraphs[0]):
+            headings.append(paragraphs.pop(0))
+
+        document_heading = "\n\n".join(headings)
+        pending = ""
         index = 0
 
-        for p in paragraphs:
-            combined = f"{pending}\n\n{p}" if pending else p
+        for paragraph in paragraphs:
+            if is_heading_like(paragraph):
+                pending = (
+                    f"{pending}\n\n{paragraph}"
+                    if pending else paragraph
+                )
+                continue
 
-            if is_heading_like(p):
-                pending = combined          # still waiting on content
-            else:
-                chunks.append(Chunk(
-                    text=combined,
+            parts = [
+                part
+                for part in (document_heading, pending, paragraph)
+                if part
+            ]
+
+            chunks.append(
+                Chunk(
+                    text="\n\n".join(parts),
                     source=doc.source,
                     index=index,
                     produced_by="chunker.py::split_documents",
-                ))
-                index += 1
-                pending = ""
+                )
+            )
+            index += 1
+            pending = ""
 
-        if pending:   # a heading was left dangling at the end of the doc
-            chunks.append(Chunk(
-                text=pending,
-                source=doc.source,
-                index=index,
-                produced_by="chunker.py::split_documents",
-            ))
+        # Attach trailing fragments to the last chunk in this document.
+        if pending and index > 0:
+            chunks[-1].text += f"\n\n{pending}"
+        elif document_heading and index == 0:
+            chunks.append(
+                Chunk(
+                    text="\n\n".join(
+                        part
+                        for part in (document_heading, pending)
+                        if part
+                    ),
+                    source=doc.source,
+                    index=0,
+                    produced_by="chunker.py::split_documents",
+                )
+            )
 
     return chunks
-    #return fallback_split(documents)
-
 
 def describe(chunks: list[Chunk]) -> str:
     """A one-line summary, printed after indexing."""

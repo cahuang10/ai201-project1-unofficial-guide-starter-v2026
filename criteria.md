@@ -57,7 +57,10 @@ in at least 4 of 5 tries.
 
 ## 4. Something about your chunks
 
-For at least 4 of 5 sampled chunks, the chunk covers one topic
+At least 4 of 5 sampled chunks must explicitly name the specific entity their content describes—for example, “Tamsin Court” rather than just “the hall.” The name must appear in the chunk’s text or an included heading; a filename or adjacent chunk does not count.
+
+
+
 
 <!-- YOU WRITE THIS ONE.
 
